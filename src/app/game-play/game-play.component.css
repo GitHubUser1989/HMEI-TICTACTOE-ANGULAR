@@ -1,0 +1,77 @@
+h2, h3 {
+  padding-bottom: 1rem;
+}
+
+.score-info {
+  padding: 2rem 0 2rem 2rem;
+}
+
+.newgame-btn {
+  margin-right: 2rem;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  width: 60rem;
+  height: 60rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.cell {
+  width: 20%;
+  height: 20%;
+  background-color: #d3d3d3;
+  float: left;
+  border: 1px solid;
+}
+
+.players {
+  padding-bottom: 1rem;
+}
+
+.player1 {
+  background-color: chartreuse;
+}
+
+.player2 {
+  background-color: yellow;
+}
+
+.player3 {
+  background-color: #232323;
+}
+
+.player4 {
+  background-color: blue;
+}
+
+.selected {
+  color: red;
+}
+
+.ex-sign {
+  background-image: url("../../img/ex.png");
+  background-size: 100% 100%;
+}
+
+.circle-sign {
+  background-image: url("../../img/circle.png");
+  background-size: 100% 100%;
+}
+
+.square-sign {
+  background-image: url("../../img/square.png");
+  background-size: 100% 100%;
+}
+
+.triangle-sign {
+  background-image: url("../../img/triangle.png");
+  background-size: 100% 100%;
+}

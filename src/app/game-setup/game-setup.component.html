@@ -1,0 +1,89 @@
+<div class="game-setup">
+  <h2>Amőba játék - beállítások</h2>
+
+  <div class="select">
+    <p><strong>Pálya mérete:</strong></p>
+    <select class="form-select option" (change)="selectBoardSize($event.target.value)">
+      <option *ngFor="let o of boardSize" [value]="o.value">{{o.name}}</option>
+    </select>
+  </div>
+
+  <div class="select">
+    <p><strong>Hány jel kell a nyeréshez:</strong></p>
+    <select class="form-select option" (change)="selectSignsInARow($event.target.value)">
+      <option *ngFor="let o of signsInARow" [value]="o.value">{{o.name}}</option>
+    </select>
+  </div>
+
+  <div class="select">
+    <p><strong>Játékosok száma:</strong></p>
+    <select class="form-select option" (change)="selectNumOfPlayers($event.target.value)">
+      <option *ngFor="let o of numberOfPlayers" [value]="o.value">{{o.name}}</option>
+    </select>
+  </div>
+
+  <div class="select">
+    <p><strong>Játékosok nevei és jelei:</strong></p>
+
+    <div class="form-floating mb-3">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            <input type="name" class="form-control" id="floatingInput" placeholder="Játékos 1 neve" [(ngModel)]="playerName1">
+          </div>
+          <div class="col">
+            <select class="sign-select form-select" (change)="selectPlayer1Sign($event.target.value)">
+              <option *ngFor="let o of signsToChoose" [value]="o.value">{{o.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            <input type="name" class="form-control" id="floatingInput" placeholder="Játékos 2 neve" [(ngModel)]="playerName2">
+          </div>
+          <div class="col">
+            <select class="sign-select form-select" (change)="selectPlayer2Sign($event.target.value)">
+              <option *ngFor="let o of signsToChoose" [value]="o.value">{{o.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            <input type="name" class="form-control" id="floatingInput" placeholder="Játékos 3 neve" [(ngModel)]="playerName3" [disabled]="players < 3">
+          </div>
+          <div class="col">
+            <select class="sign-select form-select" (change)="selectPlayer3Sign($event.target.value)" [disabled]="players < 3">
+              <option *ngFor="let o of signsToChoose" [value]="o.value">{{o.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            <input type="name" class="form-control" id="floatingInput" placeholder="Játékos 4 neve" [(ngModel)]="playerName4" [disabled]="players < 4">
+          </div>
+          <div class="col">
+            <select class="sign-select form-select" (change)="selectPlayer4Sign($event.target.value)" [disabled]="players < 4">
+              <option *ngFor="let o of signsToChoose" [value]="o.value">{{o.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" name="button" class="start-btn btn btn-dark" (click)="start()" >Start!</button>
+</div>

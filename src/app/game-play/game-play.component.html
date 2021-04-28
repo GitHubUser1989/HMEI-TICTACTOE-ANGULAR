@@ -1,0 +1,24 @@
+<div class="game-play">
+
+  <div class="score-info">
+      <h2>Játékosok:</h2>
+
+      <div class="players clearfix">
+        <h4>1. {{playerName1}}: {{player1Score}}</h4>
+        <h4>2. {{playerName2}}: {{player2Score}}</h4>
+        <h4 *ngIf="players > 2">3. {{playerName3}}: {{player3Score}}</h4>
+        <h4 *ngIf="players > 3">4. {{playerName4}}: {{player4Score}}</h4>
+      </div>
+
+      <h3 *ngIf="nextPlayer != '' && !this.Game.finish && draw == false"><span class="selected">{{nextPlayer}}</span> következik!</h3>
+      <h3 *ngIf="this.Game.finish && draw == false">Gratulálunk<span class="selected"> {{winnerPlayer}}</span>! Nyertél!</h3>
+      <h3 *ngIf="draw"><span class="selected">Döntetlen!</span></h3>
+
+      <button *ngIf="this.Game.finish || draw" type="button" name="button" class="newgame-btn btn btn-dark" (click)="newGame()">Új kör!</button>
+      <button type="button" name="button" class="restart-btn btn btn-dark" (click)="restart()">Beállítások</button>
+  </div>
+
+  <div *ngIf="!this.Game.finish && !draw" #container class="container .clearfix">
+      <!-- Ide fogja generálni a kód a táblát és a cellákat -->
+  </div>
+</div>

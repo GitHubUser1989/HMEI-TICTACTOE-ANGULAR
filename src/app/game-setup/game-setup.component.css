@@ -1,0 +1,23 @@
+h2 {
+  padding-bottom: 1rem;
+}
+
+.game-setup {
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.select {
+  padding-bottom: 1.5rem;
+}
+
+.option {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10rem !important;
+}
+
+.start-btn {
+  padding: 1rem !important;
+}
